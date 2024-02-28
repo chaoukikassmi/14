@@ -1,0 +1,41 @@
+************* Anonymous Class Type in C# *****************
+In C#, an anonymous type is a type (class) without any name that can contain public read-only properties only. It cannot contain other members, such as fields, methods, events, etc.
+
+########################### Code ####
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+namespace Main
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Anonymous  class
+            var student = new { id = 1, name = "Sami", age = 55 };
+
+            // print all 
+            Console.WriteLine(student);
+
+            //Each element 
+            Console.WriteLine(student.id);
+            Console.WriteLine(student.name);
+            Console.WriteLine(student.age);
+
+            // Nested Anonymous  class 
+            var student2 = new { id = 2, name = "Halim", age = 25, category = new { catid = 1, catname ="Manager" } };
+            // Print all
+            Console.WriteLine(student2.category);
+            // by element
+            Console.WriteLine(student2.category.catid);
+            Console.WriteLine(student2.category.catname);
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
