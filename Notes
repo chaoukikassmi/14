@@ -889,6 +889,7 @@ namespace Main
     }
 
 ################################ C# while loop
+
 The while keyword is used to create while loop in C#. The syntax for while loop is:
 
 Same as C++
@@ -972,4 +973,844 @@ namespace Main
             }
         }
     }
+
+######################## C# break Statement
+
+n C#, we use the break statement to terminate the loop.
+
+As we know, loops iterate over a block of code until the test expression is false. However, sometimes we may need to terminate the loop immediately without checking the test expression.
+
+In such cases, the break statement is used. The syntax of break statement is,
+
+break;
+Before we learn about break, make sure to learn about
+
+for loop
+if...else
+while loop
+
+************* code 
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            int i = 1;
+            do
+            {
+
+                Console.WriteLine("C# while Loop: Iteration {0}", i);
+               
+                if (i == 3)
+                    break;
+               
+                i++;
+
+            } while (i <= 5);
+
+                Console.ReadKey();
+
+            }
+        }
+    }
+
+################################# C# continue Statement
+
+In C#, we use the continue statement to skip a current iteration of a loop.
+
+When our program encounters the continue statement, the program control moves to the end of the loop and executes the test condition (update statement in case of for loop).
+
+The syntax for continue is:
+
+continue;
+Before we learn about continue, make sure to learn about
+
+for loop
+while loop
+if...else
+
+******* code 
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            for (int i = 1; i <= 5; ++i)
+            {
+
+                if (i == 3)
+                {
+                    continue;
+                }
+
+                Console.WriteLine(i);
+            }
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+################################### Arrays Are Bound
+
+Arrays are bound, you cannot exceed their limits as you do in C++
+the following code will give you error because you tried to exceed the length of the array.
+
+int[] num = {1,2,3};
+num[0] = 1;
+num[1] = 2;
+num[2] = 3;
+num[3] = 4;// Error exceed array num limits .
+
+#################################### C# Array Declaration
+
+In C#, here is how we can declare an array.
+
+datatype[] arrayName;
+Here,
+
+dataType - data type like int, string, char, etc
+arrayName - it is an identifier
+Let's see an example,
+
+int[] age;
+Here, we have created an array named age. It can store elements of int type.
+
+But how many elements can it store?
+
+To define the number of elements that an array can hold, we have to allocate memory for the array in C#. For example,
+
+// declare an array
+int[] age;
+
+// allocate memory for array
+age = new int[5];
+Here, new int[5] represents that the array can store 5 elements. We can also say the size/length of the array is 5.
+
+Note: We can also declare and allocate the memory of an array in a single line. For example,
+
+int[] age = new int[5];
+
+######################################   Array initialization
+
+In C#, we can initialize an array during the declaration. For example,
+
+int [] numbers = {1, 2, 3, 4, 5};
+Here, we have created an array named numbers and initialized it with values 1, 2, 3, 4, and 5 inside the curly braces.
+
+Note that we have not provided the size of the array. In this case, the C# automatically specifies the size by counting the number of elements in the array (i.e. 5).
+
+In an array, we use an index number to determine the position of each array element. We can use the index number to initialize an array in C#. For example,
+
+// declare an array
+int[] age = new int[5];
+
+//initializing array
+age[0] = 12;
+age[1] = 4;
+age[2] = 5;
+...
+
+
+Note:
+
+An array index always starts at 0. That is, the first element of an array is at index 0.
+If the size of an array is 5, the index of the last element will be at 4 (5 - 1).
+
+########################################## Access Array Elements
+
+We can access the elements in the array using the index of the array. For example,
+
+// access element at index 2
+array[2];
+
+// access element at index 4
+array[4];
+Here,
+
+array[2] - access the 3rd element
+array[4] - access the 5th element
+
+************* code 
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            // create an array
+            int[] numbers = { 1, 2, 3 };
+
+            //access first element
+            Console.WriteLine("Element in first index : " + numbers[0]);
+
+            //access second element
+            Console.WriteLine("Element in second index : " + numbers[1]);
+
+            //access third element
+            Console.WriteLine("Element in third index : " + numbers[2]);
+
+
+            //through loop
+            Console.WriteLine("\nAccess array using loop:\n");
+            for (int i = 0;i < numbers.Length; i++)
+            {
+                Console.WriteLine("Element in index {0} : {1} " ,i, numbers[0]);
+            }
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+
+################################## Two-Dimensional Array Declaration
+
+Here's how we declare a 2D array in C#.
+
+int[ , ] x = new int [2, 3];
+Here, x is a two-dimensional array with 2 elements. And, each element is also an array with 3 elements.
+
+So, all together the array can store 6 elements (2 * 3).
+
+Note: The single comma [ , ] represents the array is 2 dimensional.
+
+Two-Dimensional Array initialization
+In C#, we can initialize an array during the declaration. For example,
+
+int[ , ] x = { { 1, 2 ,3}, { 3, 4, 5 } };
+Here, x is a 2D array with two elements {1, 2, 3} and {3, 4, 5}. We can see that each element of the array is also an array.
+
+We can also specify the number of rows and columns during the initialization. For example,
+
+int [ , ] x = new int[2, 3] { {1, 2, 3}, {3, 4, 5} };
+
+************* code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            //initializing 2D array
+            int[,] numbers = { { 12, 13 }, { 55, 77 } };
+
+            // access first element from the first row
+            Console.WriteLine("Element at index [0, 0] : " + numbers[0, 0]);
+
+            // access first element from second row
+            Console.WriteLine("Element at index [1, 0] : " + numbers[1, 0]);
+
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+###################################### C# foreach loop
+We will learn about foreach loops (an alternative to for loop) and how to use them with arrays and collections.
+
+C# provides an easy to use and more readable alternative to for loop, the foreach loop when working with arrays and collections to iterate through the items of arrays/collections. The foreach loop iterates through each item, hence called foreach loop.
+
+
+
+Syntax of foreach loop
+foreach (element in iterable-item)
+{
+    // body of foreach loop
+}
+Here iterable-item can be an array or a class of collection.
+
+*************** code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            char[] gender = { 'm', 'f', 'm', 'm', 'm', 'f', 'f', 'm', 'm', 'f' };
+            int male = 0, female = 0;
+            foreach (char g in gender)
+            {
+                if (g == 'm')
+                    male++;
+                else if (g == 'f')
+                    female++;
+            }
+            Console.WriteLine("Number of male = {0}", male);
+            Console.WriteLine("Number of female = {0}", female);
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+***************** code 2
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            char[] myArray = { 'H', 'e', 'l', 'l', 'o' };
+
+            foreach (char ch in myArray)
+            {
+                Console.WriteLine(ch);
+            }
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+##################################### Array Operations using System.Linq
+
+In C#, we have the System.Linq namespace that provides different methods to perform various operations in an array. For example,
+
+Example: Find Minimum and Maximum Element
+
+************** code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+// provides us various methods to use in an array
+using System.Linq;
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            // Note that we used System.Linq above.
+
+            int[] numbers = { 51, -1, 2,14,18, 40, 178 };
+
+            // get the minimum element
+            Console.WriteLine("Smallest  Element: " + numbers.Min());
+
+            // Max() returns the largest number in array
+            Console.WriteLine("Largest Element: " + numbers.Max());
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+################################ Array Operations using System.Linq
+
+In C#, we have the System.Linq namespace that provides different methods to perform various operations in an array. For example,
+
+Example: Count, Sum, Average
+
+***************** code 
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+// provides us various methods to use in an array
+using System.Linq;
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            // Note that we used System.Linq above.
+
+            int[] numbers = { 20, 22, 19, 18, 1 };
+
+           
+
+            // compute Count
+            Console.WriteLine("Count : " + numbers.Count());
+           
+            // compute Sum
+            Console.WriteLine("Sum : " + numbers.Sum());
+
+            // compute the average
+            Console.WriteLine("Average: " + numbers.Average());
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+################################# C# Math
+
+The C# Math class has many methods that allows you to perform mathematical tasks on numbers.
+
+Math.Max(x,y)
+The Math.Max(x,y) method can be used to find the highest value of x and y.
+
+example:
+
+Math.Max(5, 10);
+
+
+Math.Min(x,y)
+The Math.Min(x,y) method can be used to find the lowest value of of x and y.
+
+example:
+
+Math.Min(5, 10);
+
+
+Math.Sqrt(x)
+The Math.Sqrt(x) method returns the square root of x
+
+example:
+
+Math.Sqrt(64);
+
+
+Math.Abs(x)
+The Math.Abs(x) method returns the absolute (positive) value of x.
+
+example:
+
+Math.Abs(-4.7);
+
+
+Math.Round()
+Math.Round() rounds a number to the nearest whole number.
+
+example:
+
+Math.Round(9.99);
+
+**************** code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            
+            Console.WriteLine("Max of 5, 10 is: {0}",Math.Max(5, 10));
+            Console.WriteLine("Min of 5, 10 is: {0}",Math.Min(5, 10));
+            Console.WriteLine("Squir Root of 64 is: {0}",Math.Sqrt(64));
+            Console.WriteLine("Absolute (positive) value of  -4.7 is: {0}", Math.Abs(-4.7));
+            Console.WriteLine("Round of 9.99 is: {0}",Math.Round(9.99));
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+############################### C# Methods
+
+A method is a block of code which only runs when it is called.
+
+You can pass data, known as parameters, into a method.
+
+Methods are used to perform certain actions, and they are also known as functions.
+
+C# is a fully OOP language , you cannot create a method outside class.
+
+Create a Method
+A method is defined with the name of the method, followed by parentheses (). C# provides some pre-defined methods, which you already are familiar with, such as Main(), but you can also create your own methods to perform certain actions:
+
+Example:
+
+ static void MyMethod() 
+  {
+    // code to be executed
+  }
+
+
+You should use static if you want to call the method without having obejct.
+
+***************** code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void PrintMyName()
+        {
+            Console.WriteLine("Mohammed Abu-Hadhoud");
+        }
+        static void Main(string[] args)
+            {
+
+
+            PrintMyName();
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+
+###################################### C# Method Parameters
+
+Parameters and Arguments
+Information can be passed to methods as parameter. Parameters act as variables inside the method.
+
+They are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.
+
+********** code 
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void PrintMyInfo(string Name,byte Age)
+        {
+            Console.WriteLine("Name= {0} , Age= {1}",Name,Age);
+        }
+        static void Main(string[] args)
+            {
+
+
+            PrintMyInfo("Mohammed-AbuHadhoud",45);
+
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+######################################### C# Default Parameter Value
+
+Default Parameter Value
+You can also use a default parameter value, by using the equals sign (=).
+
+************* code
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void PrintMyInfo(string Name,byte Age,string Address ="No Address")
+        {
+            Console.WriteLine("Name= {0} , Age= {1}, Address= {2}",Name,Age,Address);
+        }
+        static void Main(string[] args)
+            {
+
+            //First we did not provide the address it's optional
+            PrintMyInfo("Mohammed-AbuHadhoud",45);
+
+            //second we provided the address
+            PrintMyInfo("Mohammed-AbuHadhoud", 45,"Amman-Jordan");
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+############################# C# Return Values
+
+Return Values
+In the previous lessons, we used the void keyword in all examples, which indicates that the method should not return a value.
+
+If you want the method to return a value, you can use a primitive data type (such as int or double) instead of void, and use the return keyword inside the method.
+
+
+************ code
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static string GetMyName()
+        {
+            return "Mohammed-AbuHadhoud";
+
+        }
+        static void Main(string[] args)
+            {
+
+           Console.WriteLine("My Name is {0}", GetMyName());
+
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+
+########################## C# Named Arguments
+
+Named Arguments
+It is also possible to send arguments with the key: value syntax.
+
+That way, the order of the arguments does not matter.
+
+*************** code 
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void MyMethod(string child1, string child2, string child3)
+        {
+            Console.WriteLine("The youngest child is: " + child3);
+        }
+
+        static void Main(string[] args)
+            {
+           
+            //see the order of sending parameters is not important.
+
+            MyMethod(child3: "Omar", child1: "Saqer", child2: "Hamza");
+
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+##################################### Method Overloading
+
+With method overloading, multiple methods can have the same name with different parameters.
+
+*************** code
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static int Sum(int Num1, int Num2)
+
+        {
+            return Num1+Num2;
+        }
+
+        static int Sum(int Num1, int Num2,int Num3)
+
+        {
+            return Num1 + Num2+ Num3;
+        }
+        static int Sum(int Num1, int Num2, int Num3,int Num4)
+
+        {
+            return Num1 + Num2 + Num3+Num4;
+        }
+
+        static void Main(string[] args)
+            {
+
+            //we have 3 diffrent methods but with the same name.
+
+            Console.WriteLine(Sum(10, 20));
+            Console.WriteLine(Sum(10, 20,30));
+            Console.WriteLine(Sum(10, 20, 30,40));
+            Console.ReadKey();
+
+            }
+        }
+    }
+
+############################################ C# Exceptions - Try..Catch
+
+When executing C# code, different errors can occur: coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
+
+When an error occurs, C# will normally stop and generate an error message. The technical term for this is: C# will throw an exception (throw an error).
+
+C# try and catch
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The try and catch keywords come in pairs:
+
+Syntax:
+
+try 
+{
+  //  Block of code to try
+}
+catch (Exception e)
+{
+  //  Block of code to handle errors
+}
+
+
+*************** code
+
+
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+using System;
+
+
+namespace Main
+    {
+        internal class Program
+        {
+
+        static void Main(string[] args)
+            {
+
+            try
+            {
+                int[] myNumbers = { 1, 2, 3 };
+                Console.WriteLine(myNumbers[10]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+           Console.ReadLine();
+
+        }
+        }
+    }
+
+############################### Generate Random Number in Min to Max Range
+
+Use the Next(int min, int max) overload method to get a random integer that is within a specified range.
+
+Example: Generate Random Integers in Range Copy
+
+Random rnd = new Random();
+
+for(int j = 0; j < 4; j++)
+{
+    Console.WriteLine(rnd.Next(10, 20)); // returns random integers >= 10 and < 20
+}
+
+
+
+
 
