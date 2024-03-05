@@ -1810,7 +1810,105 @@ for(int j = 0; j < 4; j++)
     Console.WriteLine(rnd.Next(10, 20)); // returns random integers >= 10 and < 20
 }
 
+############################## Picture Box
+
+   1-  pbx_Image.Image = Image.FromFile(@"C:\Users\shawki\Desktop\MyProject_c#\AbuHadhoud\img\1.jpg");
+   2- pbx_Image.Image = Foldername in project .name of image without extention;
+
+***********************************************
+        void SelectImage(string link)
+        {
+             
+            pbx_Image.Image = Image.FromFile(link);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                SelectImage(@"C:\Users\shawki\Desktop\MyProject_c#\AbuHadhoud\img\1.jpg");
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                SelectImage(@"C:\Users\shawki\Desktop\MyProject_c#\AbuHadhoud\img\2.jpg");
+            }
+            else 
+            {
+                SelectImage(@"C:\Users\shawki\Desktop\MyProject_c#\AbuHadhoud\img\3.jpg");
+            }
 
 
 
+############################## ComboBox
+
+        private void cbx_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(cbx_list.Text);
+        }
+******************************
+        private void frm_List_Load(object sender, EventArgs e)
+        {
+            cbx_list.SelectedIndex = 2;
+        }
+
+############################## CheckedListBox
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++) 
+            {
+            checkedListBox1.Items.Add("item" + i);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i< checkedListBox1.CheckedItems.Count; i++)
+            {
+                MessageBox.Show(checkedListBox1.CheckedItems[i].ToString());
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, true);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, false);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            checkedListBox1.Items.RemoveAt(2);
+        }
+    }
+
+######################### DateTimePicker
+
+        private void frm_datetime_Load(object sender, EventArgs e)
+        {
+            label1.Text += dateTimePicker1.Text + Environment.NewLine;
+            label1.Text += dateTimePicker1.Value.ToString("dd-MMM-yyyy") + Environment.NewLine;
+            label1.Text += dateTimePicker1.Value.ToString("dd/MM/yyyy") + Environment.NewLine;
+            label1.Text += dateTimePicker1.Value.ToString("yyyy/MM/dd") + Environment.NewLine;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dateTimePicker1.Value.ToLongDateString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dateTimePicker1.Value.ToShortDateString());
+        }
 
