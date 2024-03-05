@@ -1912,3 +1912,52 @@ for(int j = 0; j < 4; j++)
             MessageBox.Show(dateTimePicker1.Value.ToShortDateString());
         }
 
+############################# MonthCalandar
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(monthCalendar1.SelectionRange.Start.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(monthCalendar1.SelectionRange.End.ToString());
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // intervals of days
+           var numDays = Convert.ToInt32((monthCalendar1.SelectionEnd - monthCalendar1.SelectionStart).TotalDays);
+            MessageBox.Show("num " + numDays);
+
+        }
+
+############################ NotifyIcon
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            notifyIcon1.Icon = SystemIcons.Application;
+
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon1.BalloonTipTitle = "Notify Icon Test Application";
+            notifyIcon1.BalloonTipText = "You have just minimized the application." +
+                                        Environment.NewLine +
+                                        "Right-click on the icon for more options.";
+
+            notifyIcon1.ShowBalloonTip(5000);
+        }
+    }
+
+####################################   TreeView and ImageList
+
+if you need it see whole lecture :
+https://programmingadvices.com/courses/14-c-level-1/lectures/45892038
+
+################################### ProgressBar
+
+if you need it see whole lecture :
+https://programmingadvices.com/courses/14-c-level-1/lectures/45893015
+
+################################### ListView
+
