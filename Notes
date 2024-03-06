@@ -1959,5 +1959,44 @@ https://programmingadvices.com/courses/14-c-level-1/lectures/45892038
 if you need it see whole lecture :
 https://programmingadvices.com/courses/14-c-level-1/lectures/45893015
 
-################################### ListView
+################################### ErrorProvider
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45925625
+
+################################## TrackBar
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45927175
+
+################################## NumericUpDown
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45927454
+
+################################## TabControl
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45928689
+
+################################# FileSaveDialog
+https://programmingadvices.com/courses/14-c-level-1/lectures/45780240
+
+################################ FileOpenDialog
+https://programmingadvices.com/courses/14-c-level-1/lectures/45780238
+
+################################ FolderBrowserDialog
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45780242
+
+############################### MDI Container
+Propretires = IsMdiContainer = true
+******************************************
+            frm_List  ls = new frm_List();  
+            ls.MdiParent = this;
+            ls.Show();
+
+############################### MenuStrip
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45977828
+
+############################### Context Menu => Right Mouse Clic Menu
+
+https://programmingadvices.com/courses/14-c-level-1/lectures/45980702
 
